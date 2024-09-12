@@ -12,5 +12,13 @@ public class Greetings
     public string Hello()
     {
         return "Hello World!";
+         namespace AppsLab_001_StartHere
+{
+    public class Greetings
+    {
+        public string Hello()
+        {
+            return "Hello AppsLab!";
+        }
     }
 }
