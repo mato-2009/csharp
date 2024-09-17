@@ -22,3 +22,23 @@ Console.WriteLine(10 == 50);
 Console.WriteLine(50 == 50);
 Console.WriteLine(50 > 60);
 Console.WriteLine(60 < 70);
+
+var menoUzivatela = "Martin";
+var heslopouzivatela = "123456789";
+var zadanemeno = "Martin";
+var zadaneheslo = "123456789";
+var porovnaniemena = menoUzivatela == zadanemeno;
+var porovnaniehesiel = heslopouzivatela == zadaneheslo;
+var prijatPristup = porovnaniemena || porovnaniehesiel;
+
+Console.WriteLine("Meno zhoda: " + porovnaniemena);
+Console.WriteLine("Heslo zhoda: " + porovnaniehesiel);
+Console.WriteLine("pustime uzivatela " + prijatPristup);
+
+
+
+
+
+
+
+
