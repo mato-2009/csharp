@@ -34,14 +34,15 @@ var prijatPristup = porovnaniemena || porovnaniehesiel;
 Console.WriteLine("Meno zhoda: " + porovnaniemena);
 Console.WriteLine("Heslo zhoda: " + porovnaniehesiel);
 Console.WriteLine("pustime uzivatela " + prijatPristup);
-if (prijatPristup)
+if (porovnaniemena && porovnaniehesiel)
 {
     Console.WriteLine("Heslo sa zhoduje, vitaj " + menoUzivatela);
-}   
+}
 else
 {
     Console.WriteLine("Heslo sa NEZHODUJE");
 }
+
 
 
 
