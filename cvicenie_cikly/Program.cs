@@ -42,12 +42,18 @@ namespace MyApp
                  postup++;
              }
              */
-
+            Console.WriteLine("Vsetky mena v zozname");
             Console.WriteLine("Zadajte Meno");
 
             string meno = Console.ReadLine();
 
-            Console.WriteLine(meno);
+            List<string> listnames = new List<string>()
+            list meno.Add(Console.ReadLine());
+            
+            
+           
+                
+                Console.WriteLine(meno);
 
 
 
