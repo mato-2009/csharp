@@ -119,7 +119,8 @@ namespace MyApp
             
             public static void PrintMenu()
         {
-            Thread.Sleep(3000);
+
+            
             Console.Clear();
             Console.WriteLine("1.Vypis poloziek");
             Console.WriteLine("2.Pridanie polozky");
