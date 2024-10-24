@@ -3,7 +3,7 @@
     internal class Program
     {
         static void Main(string[] args)
-        {
+        {                                                                               
             Console.WriteLine("Zadaj vysku obdlznika");
             int sirka = Int32.Parse(Console.ReadLine());
             Console.WriteLine("Zadaj sirku obdlznika");
@@ -24,4 +24,4 @@
         
         }
     }
-}
+} 
