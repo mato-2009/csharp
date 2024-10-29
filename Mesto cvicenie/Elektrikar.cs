@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace Mesto_cvicenie
 {
-    public class Lekar
+    public class Elektrikar
     {
         public string Name { get; set; }
         public int Age { get; set; }
 
-        public Lekar(string name, int age)
+        public Elektrikar(string name, int age)
         {
             Name = name;
             Age = age;
         }
 
-       
 
-        public void Liecenie()
+
+        public void kabel()
         {
-            Console.WriteLine("Meno: " + Name + " Vek: " + Age + " je Lekar/ka");
+            Console.WriteLine("Meno: " + Name + " Vek: " + Age + " je Elektrikar/ka");
 
 
         }

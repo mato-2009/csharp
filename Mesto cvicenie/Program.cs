@@ -19,9 +19,34 @@
             mesto2.PridajObcana(obcan3);
             mesto2.PridajObcana(obcan2);
             mesto2.PridajObcana(obcan1);
+            
+
+            Lekar lekar1 = new Lekar("Adam", 25);
+            Lekar lekar2 = new Lekar("Filip", 35);
+            Elektrikar elektrikar = new Elektrikar("Kubo", 19);
+            Elektrikar elektrikar1 = new Elektrikar("Fero", 22);
+            Ucitelia ucitel1 = new Ucitelia("Igor",26);
+            Ucitelia ucitel2 = new Ucitelia("Michal",30);
+
+            mesto1.PridajUcitelaDoMesta(ucitel1);
+            mesto2.PridajUcitelaDoMesta(ucitel2);
+            mesto1.PridajElektrikaraDeMesta(elektrikar);
+            mesto2.PridajElektrikaraDeMesta(elektrikar1);
+            mesto1.Pridajlekaradomesta(lekar2);
+            mesto2.Pridajlekaradomesta(lekar1);
+
+
             mesto1.VypisObcanov();
             mesto2.VypisObcanov();
         }
+
+        
+
+
+
+
+
+
 
         
 

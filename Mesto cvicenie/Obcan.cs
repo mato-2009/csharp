@@ -21,9 +21,7 @@ namespace Mesto_cvicenie
                 Age = age;
             }
 
-        public Obcan()
-        {
-        }
+        
 
         public void VypisInfo()
             {
