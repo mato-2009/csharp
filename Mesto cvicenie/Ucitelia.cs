@@ -7,20 +7,15 @@ using System.Threading.Tasks;
 
 namespace Mesto_cvicenie
 {
-    public class Ucitelia
+    public class Ucitelia : Obcan
     {
-        public string Name { get; set; }
-        public int Age { get; set; }
+        public string ucenie;
+        public Ucitelia(string Name, int Age, string ucenie) : base(Name, Age) { }
 
-        public Ucitelia(string name, int age)
-        {
-            Name = name;
-            Age = age;
-        }
-
-
-
-        public void ucenie()
+         { 
+        this.ucenie=ucenie
+    }
+        public void VypisInfo()
         {
             Console.WriteLine("Meno: " + Name + " Vek: " + Age + " je ucitel/ka");
 

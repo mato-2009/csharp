@@ -62,10 +62,9 @@ namespace Mesto_cvicenie
                 lekar.Liecenie();
             }
             Console.WriteLine("\n");
-            foreach (var ucitel in ucitelia)
-            {
-                ucitel.ucenie();
-            }
+            
+           
+            
             Console.WriteLine("\n");
             foreach (var elektrikar in elektrikari)
             {

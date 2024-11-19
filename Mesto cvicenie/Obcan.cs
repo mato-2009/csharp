@@ -29,7 +29,19 @@ namespace Mesto_cvicenie
 
 
             }
+       
+         public void VypisVek()
+        {
+
+
+            Console.WriteLine("Vek:  " + Age);
         }
+    
+    
+    
+    
+    
+    }
 }
 
 

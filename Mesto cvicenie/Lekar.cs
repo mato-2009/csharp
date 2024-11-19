@@ -6,20 +6,13 @@ using System.Threading.Tasks;
 
 namespace Mesto_cvicenie
 {
-    public class Lekar
+    public class Lekar : Obcan
     {
-        public string Name { get; set; }
-        public int Age { get; set; }
-
-        public Lekar(string name, int age)
-        {
-            Name = name;
-            Age = age;
-        }
-
+        
+        public Lekar(string Name, int Age) : base(Name, Age) { }
        
 
-        public void Liecenie()
+        public new void VypisInfo()
         {
             Console.WriteLine("Meno: " + Name + " Vek: " + Age + " je Lekar/ka");
 
