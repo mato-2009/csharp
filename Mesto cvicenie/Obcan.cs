@@ -6,41 +6,54 @@ using System.Threading.Tasks;
 
 namespace Mesto_cvicenie
 {
-    
-    
 
 
-        public class Obcan
-        {
-            public string Name { get; set; }
-            public int Age { get; set; }
-
-            public Obcan(string name, int age)
-            {
-                Name = name;
-                Age = age;
-            }
-
-        
-
-        public void VypisInfo()
-            {
-                Console.WriteLine("Meno: " + Name + "Vek: " + Age);
 
 
-            }
-       
-         public void VypisVek()
+    public class Obcan
+    {
+        protected string Name { get; set; }
+        protected int Age { get; set; }
+        protected StavObcana stav;
+
+
+
+        public StavObcana Stav
         {
 
 
-            Console.WriteLine("Vek:  " + Age);
-        }
-    
-    
-    
-    
-    
+            get { return stav; }
+            set { stav = value }
+        } 
+
+public Obcan(string name, int age)
+{
+    Name = name;
+    Age = age;
+}
+
+
+
+public virtual void VypisInfo()
+{
+    Console.WriteLine("Meno: " + Name + "Vek: " + Age + "Stav:" + stav);
+
+
+}
+
+
+
+
+
+public enum StavObcana
+{
+    Domaci,
+    Cudzinec,
+    Turista
+
+}
+
+
     }
 }
 

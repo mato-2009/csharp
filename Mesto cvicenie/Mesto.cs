@@ -16,12 +16,12 @@ namespace Mesto_cvicenie
 
     public class Mesto
     {
-        public string NazovMesta { get; set; }
-        public List<Obcan> obcania { get; set; }
-        public List<Lekar> lekari { get; set; }
-        public List<Ucitelia> ucitelia { get; set; }
-        public List<Elektrikar> elektrikari { get; set; }
-        public Mesto(string nazovMesta)
+        protected string NazovMesta { get; set; }
+        protected List<Obcan> obcania { get; set; }
+        protected List<Lekar> lekari { get; set; }
+        protected List<Ucitelia> ucitelia { get; set; }
+        protected List<Elektrikar> elektrikari { get; set; }
+        protected Mesto(string nazovMesta)
         {
             NazovMesta = nazovMesta;
             obcania = new List<Obcan>();

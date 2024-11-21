@@ -6,7 +6,37 @@ using System.Threading.Tasks;
 
 namespace Knihovna
 {
-    internal class Kniha
+    public class Kniha
     {
+
+        private string nazov;
+        private int pocetStran;
+
+        public Kniha(string nazov, int pocetStran)
+        {
+            this.nazov = nazov;
+            this.pocetStran = pocetStran;
+
+        }
+        public string Nazov
+        {
+            get { return nazov; }
+            set { nazov = value; }
+        }
+        public int Pocetstran
+        {
+            get { return pocetStran; }
+
+            set {
+                if (value > 0)
+                    pocetStran = value;
+                else
+                    Console.WriteLine("Chyba Pocet stran musi byt viac ako nula");
+                }
+       
+
+
+
     }
+
 }
