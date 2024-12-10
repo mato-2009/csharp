@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Mesto_cvicenie
@@ -44,6 +46,14 @@ namespace Mesto_cvicenie
             lekari.Add(lekar);
         }
 
+        public Mesto()
+        {
+        
+        
+        
+        
+        
+        }
 
         public void PridajObcana(Obcan obcan)
         {
@@ -62,9 +72,9 @@ namespace Mesto_cvicenie
                 lekar.Liecenie();
             }
             Console.WriteLine("\n");
-            
-           
-            
+
+
+
             Console.WriteLine("\n");
             foreach (var elektrikar in elektrikari)
             {
@@ -72,6 +82,28 @@ namespace Mesto_cvicenie
             }
             Console.WriteLine("\n");
 
+
+
+
+            public void UlozDoSuboru(string nazovSuboru);
+            {
+                string json = JsonSerializer.Serialize(this);
+                File.WriteAllText(nazovSuboru,json);
+                Console.WriteLine("Data boli ulozene");
+
+            }
+        
+         public static Mesto NacitajZoSuboru(string nazovSuboru
+             )
+            {
+                if (File.Exists(nazovSuboru))
+                {
+                    string json = File.ReadAllText(nazovSuboru);
+                    Mesto mesto = JsonSerializer.Deserialize<Mesto>(json);
+                    return mesto;
+                }
+             return null
+            }
         }
     }
 } 
