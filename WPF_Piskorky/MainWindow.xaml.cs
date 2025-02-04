@@ -76,20 +76,39 @@ namespace WPF_Piskorky
             if (b_0x0 == b_0x1 && b_0x0 == b_0x2)
             {
                 return true;
-
             }
             if (b_1x0 == b_1x1 && b_1x0 == b_1x2)
             {
                 return true;
             }
             if (b_2x0 == b_2x1 && b_2x0 == b_2x2)
-            { return true; }
+            {
+                return true;
+            }
             if (b_0x0 == b_0x1 && b_0x0 == b_0x2)
-            { return true; }
+            {
+                return true;
+            }
             if (b_0x1 == b_1x1 && b_0x1 == b_2x1)
-            { return true; }
+            {
+                return true;
+            }
             if (b_0x2 == b_1x2 && b_0x2 == b_2x2)
-            { return true; }
+            {
+                return true;
+            }
+            if (b_0x0 == b_1x1 && b_0x0 == b_2x2)
+            {
+                return true;
+            }
+            if (b_2x0 == b_1x1 && b_2x0 == b_0x2)
+            {
+                return true;
+            }
+            return false;
+
+
+
 
         }
 
