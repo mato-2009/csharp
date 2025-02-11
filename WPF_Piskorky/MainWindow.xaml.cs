@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics.Eventing.Reader;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,19 +15,16 @@ namespace WPF_Piskorky
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// </summary>
     public partial class MainWindow : Window
     {
-        public char LastPlayer { get; set; } = 'O';
+        public char LastPlayer { get; set; } = '☼';
 
-        public char PlayerOne { get; set; } = '✕';
+        public char PlayerOne { get; set; } = '☽';
 
-        public char PlayerTwo { get; set; } = 'O';
-       
-        
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+        public char PlayerTwo { get; set; } = '☼';
 
         public void ProcessClick(Button button)
         {
@@ -36,10 +34,10 @@ namespace WPF_Piskorky
                 return;
             }
 
-
             if (LastPlayer == PlayerOne)
             {
                 button.Content = PlayerTwo;
+                button.Background = new SolidColorBrush(Colors.Green);
                 LastPlayer = PlayerTwo;
 
             }
@@ -47,75 +45,124 @@ namespace WPF_Piskorky
             else if (LastPlayer == PlayerTwo)
             {
                 button.Content = PlayerOne;
+                button.Background = new SolidColorBrush(Colors.Blue);
                 LastPlayer = PlayerOne;
+
 
             }
             var isWinner = CheckWinner();
             if (isWinner)
             {
-                MessageBox.Show("Vyhral hráč:" + LastPlayer);
+
+                var result = MessageBox.Show("Vyhral hrac:" + LastPlayer +
+                    Environment.NewLine + "Chces novu hru?",
+                    "Vyhral hrac",
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Information);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    Button0.Content = "";
+                    Button1.Content = "";
+                    Button2.Content = "";
+                    Button3.Content = "";
+                    Button4.Content = "";
+                    Button5.Content = "";
+                    Button6.Content = "";
+                    Button7.Content = "";
+                    Button8.Content = "";
+                    Button0.Background = new SolidColorBrush(Colors.White);
+                    Button1.Background = new SolidColorBrush(Colors.White);
+                    Button2.Background = new SolidColorBrush(Colors.White);
+                    Button3.Background = new SolidColorBrush(Colors.White);
+                    Button4.Background = new SolidColorBrush(Colors.White);
+                    Button5.Background = new SolidColorBrush(Colors.White);
+                    Button6.Background = new SolidColorBrush(Colors.White);
+                    Button7.Background = new SolidColorBrush(Colors.White);
+                    Button8.Background = new SolidColorBrush(Colors.White);
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+            bool isFull = CheckFull();
+            if (isFull)
+            {
+                MessageBox.Show("Remiza");
+                this.Close();
             }
         }
-        private void Button_0x0_Click(object sender, RoutedEventArgs e)
+
+        private bool CheckFull()
+        {
+            var button0 = Button0.Content.ToString();
+            var button1 = Button1.Content.ToString();
+            var button2 = Button2.Content.ToString();
+            var button3 = Button3.Content.ToString();
+            var button4 = Button4.Content.ToString();
+            var button5 = Button5.Content.ToString();
+            var button6 = Button6.Content.ToString();
+            var button7 = Button7.Content.ToString();
+            var button8 = Button8.Content.ToString();
+
+            if (button0 != "" && button1 != "" && button2 != ""
+                && button3 != "" && button4 != "" && button5 != "" &&
+                button6 != "" && button7 != "" && button8 != "")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void Button0_Click(object sender, RoutedEventArgs e)
         {
             ProcessClick(sender as Button);
         }
 
         public bool CheckWinner()
         {
-            var b_0x0 = Button_0x0.Content.ToString();
-            var b_0x1 = Button_0x1.Content.ToString();
-            var b_0x2 = Button_0x2.Content.ToString();
-            var b_1x0 = Button_1x0.Content.ToString();
-            var b_1x1 = Button_1x1.Content.ToString();
-            var b_1x2 = Button_1x2.Content.ToString();
-            var b_2x0 = Button_2x0.Content.ToString();
-            var b_2x1 = Button_2x1.Content.ToString();
-            var b_2x2 = Button_0x0.Content.ToString();
+            var button0 = Button0.Content.ToString();
+            var button1 = Button1.Content.ToString();
+            var button2 = Button2.Content.ToString();
+            var button3 = Button3.Content.ToString();
+            var button4 = Button4.Content.ToString();
+            var button5 = Button5.Content.ToString();
+            var button6 = Button6.Content.ToString();
+            var button7 = Button7.Content.ToString();
+            var button8 = Button8.Content.ToString();
 
-            if (b_0x0 == b_0x1 && b_0x0 == b_0x2)
+            // Kontrola prveho riadku
+            if (button0 == button1 && button1 == button2 && button2 != "")
             {
                 return true;
             }
-            if (b_1x0 == b_1x1 && b_1x0 == b_1x2)
+            if (button3 == button4 && button4 == button5 && button3 != "")
             {
                 return true;
             }
-            if (b_2x0 == b_2x1 && b_2x0 == b_2x2)
+            if (button6 == button7 && button7 == button8 && button6 != "")
             {
                 return true;
             }
-            if (b_0x0 == b_0x1 && b_0x0 == b_0x2)
+            if (button0 == button3 && button3 == button6 && button3 != "")
             {
                 return true;
             }
-            if (b_0x1 == b_1x1 && b_0x1 == b_2x1)
+            if (button1 == button4 && button4 == button7 && button4 != "")
             {
                 return true;
             }
-            if (b_0x2 == b_1x2 && b_0x2 == b_2x2)
+            if (button0 == button4 && button4 == button8 && button4 != "")
             {
                 return true;
             }
-            if (b_0x0 == b_1x1 && b_0x0 == b_2x2)
-            {
-                return true;
-            }
-            if (b_2x0 == b_1x1 && b_2x0 == b_0x2)
+            if (button2 == button4 && button4 == button6 && button4 != "")
             {
                 return true;
             }
             return false;
-
-
-
-
-        }
-
-
         }
     }
 
-
-
-
+}
