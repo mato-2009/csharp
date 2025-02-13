@@ -13,8 +13,8 @@ namespace Pokemoni
 
         public GameEngine() 
         {
-            FirstPokemon = new Pokemon(name: "Pikachu",100);
-            SecondPokemon = new Pokemon(name: "Charizard",100);
+            FirstPokemon = new Pokemon(name: "Pikachu",200,1);
+            SecondPokemon = new Pokemon(name: "Charizard",200,1);
         }
 
     }

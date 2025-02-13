@@ -8,6 +8,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="900" ResizeMode="NoResize">
     <Grid Background="#FFEAC0C0">
-        <Windows:UserControl_Map HorizontalAlignment="Left" VerticalAlignment="Center" Height="584" Width="916"/>
+        <Windows:UserControl_Map x:Name="UserControl_World" HorizontalAlignment="Left" VerticalAlignment="Center" Height="584" Width="916"/>
     </Grid>
 </Window>
